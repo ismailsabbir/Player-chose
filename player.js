@@ -1,15 +1,3 @@
-// document.getElementById("select1").addEventListener("click", function () {
-//   const player1element = document.getElementById("player1");
-//   const player1name = player1element.innerText;
-//   console.log(player1name);
-
-//   const playerposition = document.getElementById("order-list");
-//   const li = document.createElement("li");
-//   li.innerText = player1name;
-//   playerposition.appendChild(li);
-
-// });
-
 function selectPlayerPush(player) {
   const playerelement = document.getElementById(player);
   const playername = playerelement.innerText;
@@ -101,25 +89,26 @@ function calculation(price) {
   const playerDemandelement = document.getElementById(price);
   const playerDemandstring = playerDemandelement.value;
   const playerDemandTaka = parseFloat(playerDemandstring);
-  const playerTotlaAmount = 5 * playerDemandTaka;
+  if (isNaN(playerDemandTaka)) {
+    alert("PLEASE ENTER AMOUNT");
+    return;
+  } else {
+    const playerTotlaAmount = 5 * playerDemandTaka;
 
-  const previceAmountElement = document.getElementById("previce-amount");
-  previceAmountElement.innerText = playerTotlaAmount;
-  return playerTotlaAmount;
+    const previceAmountElement = document.getElementById("previce-amount");
+    previceAmountElement.innerText = playerTotlaAmount;
+    return playerTotlaAmount;
+  }
+
+  // const playerTotlaAmount = 5 * playerDemandTaka;
+
+  // const previceAmountElement = document.getElementById("previce-amount");
+  // previceAmountElement.innerText = playerTotlaAmount;
+  // return playerTotlaAmount;
 }
 
 document.getElementById("calculate").addEventListener("click", function () {
   calculation("player-price");
-
-  // const playerDemandelement = document.getElementById("player-price");
-  // const playerDemandstring = playerDemandelement.value;
-  // const playerDemandTaka = parseFloat(playerDemandstring);
-  // const playerTotlaAmount = 5 * playerDemandTaka;
-
-  // const previceAmountElement = document.getElementById("previce-amount");
-  // // const previceAmountStr=previceAmountElement.innerText;
-  // // const previceAmountValue=parseFloat(previceAmountStr);
-  // previceAmountElement.innerText = playerTotlaAmount;
 });
 
 document.getElementById("totl-btn").addEventListener("click", function () {
@@ -134,6 +123,13 @@ document.getElementById("totl-btn").addEventListener("click", function () {
   const previesTotalAmount = calculation("player-price");
   const totlAmountCO = previesTotalAmount + managerAmount + coachAmount;
 
-  const totalAmountPlace = document.getElementById("total-amount-place");
-  totalAmountPlace.innerText = totlAmountCO;
+  if (isNaN(managerAmount) || isNaN(coachAmount)) {
+    alert("PLEASE ENTER AMOUNT");
+  } else {
+    const totalAmountPlace = document.getElementById("total-amount-place");
+    totalAmountPlace.innerText = totlAmountCO;
+  }
+
+  // const totalAmountPlace = document.getElementById("total-amount-place");
+  // totalAmountPlace.innerText = totlAmountCO;
 });
