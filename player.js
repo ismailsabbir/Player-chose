@@ -1,3 +1,4 @@
+//-----------PLAYER SELECT FUNCTION-----------//
 function selectPlayerPush(player) {
   const playerelement = document.getElementById(player);
   const playername = playerelement.innerText;
@@ -5,8 +6,8 @@ function selectPlayerPush(player) {
   const playerposition = document.getElementById("order-list");
   const li = document.createElement("li");
   li.innerText = playername;
-
   li.classList.add("player-add");
+
   const lilength = document
     .getElementById("order-list")
     .getElementsByClassName("player-add").length;
@@ -14,14 +15,17 @@ function selectPlayerPush(player) {
   if (lilength <= 4) {
     playerposition.appendChild(li);
   } else {
-    alert("You can not add more than five player");
+    alert("YOU CAN NOT ADD MORE THAN FIVE PLAYER");
     playerposition.appendChild();
   }
 }
+
+//------------DISBLE FUNCTION---------//
 function disble(select) {
-  //const buttons = document.getElementById(select);
   select.setAttribute("disabled", true);
 }
+
+//-------------SELECTPLAYERPUSH FUNCTION CALL-----------//
 document.getElementById("select1").addEventListener("click", function () {
   selectPlayerPush("player1");
   const button = document.getElementById("select1");
@@ -85,32 +89,30 @@ document.getElementById("select12").addEventListener("click", function () {
   const button = document.getElementById("select12");
   disble(button);
 });
+
+//-----------CALCULATION FUNCTION------------//
 function calculation(price) {
   const playerDemandelement = document.getElementById(price);
   const playerDemandstring = playerDemandelement.value;
   const playerDemandTaka = parseFloat(playerDemandstring);
+
   if (isNaN(playerDemandTaka)) {
     alert("PLEASE ENTER AMOUNT");
     return;
   } else {
     const playerTotlaAmount = 5 * playerDemandTaka;
-
     const previceAmountElement = document.getElementById("previce-amount");
     previceAmountElement.innerText = playerTotlaAmount;
     return playerTotlaAmount;
   }
-
-  // const playerTotlaAmount = 5 * playerDemandTaka;
-
-  // const previceAmountElement = document.getElementById("previce-amount");
-  // previceAmountElement.innerText = playerTotlaAmount;
-  // return playerTotlaAmount;
 }
 
+//-----------CALCULATION FUNCTION CALL---------//
 document.getElementById("calculate").addEventListener("click", function () {
   calculation("player-price");
 });
 
+//-----------TOTAL AMOUNT  CALCULATION EITH MANAGER COST AND COACH COST---------//
 document.getElementById("totl-btn").addEventListener("click", function () {
   const mangeraElement = document.getElementById("manager-amount");
   const managerstring = mangeraElement.value;
@@ -129,7 +131,4 @@ document.getElementById("totl-btn").addEventListener("click", function () {
     const totalAmountPlace = document.getElementById("total-amount-place");
     totalAmountPlace.innerText = totlAmountCO;
   }
-
-  // const totalAmountPlace = document.getElementById("total-amount-place");
-  // totalAmountPlace.innerText = totlAmountCO;
 });
