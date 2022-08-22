@@ -2,4 +2,165 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  font-family: "Poppins";
+}
+
+.home {
+  border: 1px solid black;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  position: relative;
+}
+.main-container {
+  background-color: rgb(42, 37, 37);
+}
+.left {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+}
+.left img {
+  height: 500px;
+  width: px;
+}
+.center {
+  color: white;
+  text-align: center;
+}
+.center p {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.logo {
+  color: orangered;
+  font-family: "Lobster", cursive;
+  margin-bottom: 20px;
+}
+.right {
+  position: absolute;
+  right: 10px;
+  transform: rotate(360deg);
+}
+.main-player-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.players-container {
+  display: flex;
+
+  justify-content: space-around;
+  width: 90%;
+
+  height: auto;
+}
+.left-container {
+  width: 85%;
+  height: auto;
+}
+.player-list {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 15px;
+}
+.card {
+  border: 1px solid gray;
+}
+
+.card img {
+  height: 250px;
+  width: 18rem;
+}
+.card-body {
+  background-color: black;
+}
+.card-body h5,
+p {
+  color: white;
+  text-align: center;
+}
+.card-body a {
+  align-items: center;
+  width: 15rem;
+}
+.right-container {
+  width: 25%;
+  height: 750px;
+
+  position: relative;
+}
+.right-item {
+  height: auto;
+  width: 90%;
+  position: absolute;
+  top: 10px;
+}
+.top {
+  background-color: black;
+  margin-bottom: 20px;
+  padding: 10px;
+  height: 300px;
+}
+.top h3 {
+  color: orange;
+  text-align: center;
+}
+.top li {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+.botom {
+  text-align: center;
+  background-color: black;
+  padding: 10px;
+}
+.botom label {
+  color: white;
+}
+.botom h6 {
+  color: orange;
+  text-align: center;
+  margin: 10px;
+}
+.botom input {
+  border: 2px solid white;
+  margin: 10px;
+  width: 100px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+.botom button {
+  text-align: center;
+  background-color: blue;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 5px;
+  width: 200px;
+}
+.botom p {
+  margin-top: 10px;
+  color: white;
+}
+footer {
+  height: 200px;
+  margin-top: 20px;
+  border-top: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer p {
+  color: white;
 }
