@@ -88,10 +88,11 @@ p {
   color: white;
   text-align: center;
 }
-.card-body a {
+.card-body button {
+  margin-left: 4.5rem;
   align-items: center;
-  width: 15rem;
 }
+
 .right-container {
   width: 25%;
   height: 750px;
